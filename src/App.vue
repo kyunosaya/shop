@@ -24,7 +24,7 @@
     <!-- 제품카테고리 -->
      <ul class="list">
        <li v-for="(item,index) in filteredProducts" :key="index">
-        <ProdctItem :item="item" :cart="cart" @addToCart="addTocart"/>
+        <ProductItem :item="item" :cart="cart" @addToCart="addTocart"/>
        </li>
      </ul>
   </div>
@@ -32,7 +32,7 @@
 
 <script>
 import ProduData from '@/assets/data.json'
-import ProdctItem from '@/components/ProductItem.vue'
+import ProductItem from '@/components/ProductItem.vue'
 import NavPrice from '@/components/NavPrice.vue'
 
 export default {
@@ -45,7 +45,7 @@ export default {
       products:ProduData 
     }
   },
-  components:{ProdctItem,NavPrice},
+  components:{ProductItem,NavPrice},
  computed:{
   filteredProducts(){
     return this.products.filter(item => (item.price < this.max));
